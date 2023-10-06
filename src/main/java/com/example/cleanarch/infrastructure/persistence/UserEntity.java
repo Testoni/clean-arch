@@ -1,8 +1,16 @@
-package com.example.cleanarch.model;
+package com.example.cleanarch.infrastructure.persistence;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-public class User {
+@Table("USER")
+public class UserEntity {
+
+    public UserEntity(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
     @Id
     private Long id;
